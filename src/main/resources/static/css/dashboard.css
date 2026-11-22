@@ -1,0 +1,135 @@
+.field textarea,
+.field select {
+  width: 100%;
+  padding: 0.78rem 0.95rem;
+  font: inherit;
+  color: var(--text);
+  background: var(--bg);
+  border: 1.5px solid var(--border);
+  border-radius: var(--r-sm);
+  transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
+  resize: vertical;
+}
+
+.field textarea:focus,
+.field select:focus {
+  outline: none;
+  background: var(--surface);
+  border-color: var(--border-strong);
+  box-shadow: 3px 3px 0 var(--primary);
+}
+
+.field input[type="number"],
+.field input[type="date"],
+.field input[type="time"] {
+  text-align: end;
+  font-variant-numeric: tabular-nums;
+}
+
+.row2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem;
+}
+
+/* KPI Strip */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
+  gap: 0.9rem;
+  margin-block-end: 1.5rem;
+  animation: rise 0.35s ease;
+}
+
+.kpi {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 14px;
+  padding: 1rem 1.15rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.kpi.accent {
+  border-color: var(--border-strong);
+  box-shadow: 3px 3px 0 var(--primary);
+}
+
+.kpi-val {
+  font-family: var(--font-display);
+  font-size: 1.65rem;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.2;
+}
+
+.kpi-lbl {
+  font-size: 0.82rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.85rem;
+  margin-block-end: 1.1rem;
+  flex-wrap: wrap;
+}
+
+.toolbar b {
+  font-family: var(--font-display);
+  font-size: 1.12rem;
+  font-weight: 800;
+}
+
+.d-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 1.05rem;
+}
+
+.d-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  animation: rise 0.3s ease;
+}
+
+.d-item.past { opacity: 0.58; }
+
+.p-name { font-size: 1.35rem; font-weight: 800; }
+
+.note {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.1rem;
+  margin-block-end: 1.25rem;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--ochre) 14%, var(--surface));
+  border: 1.5px solid color-mix(in srgb, var(--ochre) 45%, transparent);
+  color: var(--ochre);
+  font-weight: 700;
+  font-size: 0.92rem;
+}
+
+.d-panel { min-height: 140px; }
+
+.b-actions {
+  display: flex;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+  margin-block-start: 0.55rem;
+  padding-block-start: 0.7rem;
+  border-block-start: 1.5px dashed var(--border);
+}
+
+.btn.sm {
+  padding: 0.48rem 0.95rem;
+  font-size: 0.86rem;
+}
+
+.pb-group { margin-block-end: 1.8rem; }

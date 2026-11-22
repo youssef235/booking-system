@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>مواعيد — نظام إدارة الحجوزات</title>
+<script>
+(function () {
+  var saved = localStorage.getItem('bk_theme');
+  var dark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+  document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@500;600;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/app.css">
+<link rel="stylesheet" href="/css/browse.css">
+<link rel="stylesheet" href="/css/bookings.css">
+<link rel="stylesheet" href="/css/dashboard.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="#/home">
+      <span class="logo" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="4" width="18" height="17" rx="3"/>
+          <path d="M8 2v4M16 2v4M3 10h18"/>
+          <path d="M12 13.5v2.5l1.8 1"/>
+        </svg>
+      </span>
+      <span class="brand-text">
+        <b>مواعيد</b>
+        <small>دفتر الحجوزات</small>
+      </span>
+    </a>
+    <div class="topbar-end">
+      <nav id="nav" aria-label="التنقل الرئيسي"></nav>
+      <button id="theme-toggle" class="theme-btn" type="button" aria-label="تبديل المظهر"></button>
+    </div>
+  </div>
+</header>
+<main id="app"></main>
+<div id="toasts" aria-live="polite"></div>
+<script src="/js/api.js"></script>
+<script src="/js/ui.js"></script>
+<script src="/js/browse.js"></script>
+<script src="/js/bookings.js"></script>
+<script src="/js/providerBookings.js"></script>
+<script src="/js/dashboard.js"></script>
+<script src="/js/app.js"></script>
+</body>
+</html>

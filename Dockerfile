@@ -1,12 +1,10 @@
-FROM eclipse-temurin:21-jdk AS build
+FROM maven:3.9-eclipse-temurin-21-jammy AS build
 WORKDIR /app
-COPY mvnw pom.xml ./
-COPY .mvn .mvn
-RUN sed -i 's/\r$//' mvnw && chmod +x mvnw
-RUN ./mvnw dependency:go-offline -B
+COPY pom.xml ./
+RUN mvn dependency:go-offline -B
 COPY src src
-RUN ./mvnw clean package -DskipTests -B
-FROM eclipse-temurin:21-jre
+RUN mvn clean package -DskipTests -B
+FROM eclipse-temurin:21-jre-jammy
 WORKDIR /app
 RUN groupadd -r app && useradd -r -g app app
 COPY --from=build /app/target/*.jar app.jar
